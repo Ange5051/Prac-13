@@ -4,41 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace angel_215_zadacha_2
 {
     class Program
     {
         /// <summary>
-        /// Задача 1. Найти минимальную величину из двух целых переменных a, b, 
-        /// используя вспомогательные методы (ввода аргументов, нахождения минимальной величины, вывода результата).
+        /// Задача 2. Найти минимальную величину их трех целых переменных a, b, c с 
+        /// использованием вспомогательных методов (ввода аргументов, нахождения минимальной величины, вывода результата).
         /// </summary>
-        /// <param name=""></param>
-        /// <param name=""></param>
-        /// <returns></returns>
+        /// <param name="args"></param>
 
-        static int Input (string mesage)
+        static int Input(string mesage)
         {
             Console.Write(mesage);
             return int.Parse(Console.ReadLine());
         }
-
-        static int Min(int x,int y)
+        static int Min(int x, int y)
         {
             return x < y ? x : y;
         }
-
-        public static void Qutput(int result)
-        {
-            Console.WriteLine(result);
-        }
-        
         static void Main(string[] args)
         {
             int x = Input("x =");
             int y = Input("y =");
-            int result = Min(x, y);
-            Qutput(result);
-            Console.Read();
+            int z = Input("z =");
+            int min = Min(Min(x, y), z);
+
+            Console.WriteLine($"min={min}");
+
         }
     }
 }
